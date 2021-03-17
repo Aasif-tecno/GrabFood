@@ -1,0 +1,16 @@
+current directory: /Users/apple/Desktop/Aasif/Blogger/vendor/bundle/ruby/3.0.0/gems/racc-1.5.2/ext/racc/cparse
+/Users/apple/.rvm/rubies/ruby-3.0.0/bin/ruby -I /Users/apple/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0 -r ./siteconf20210316-18597-j8mce6.rb extconf.rb
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/apple/Desktop/Aasif/Blogger/vendor/bundle/ruby/3.0.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /Users/apple/Desktop/Aasif/Blogger/vendor/bundle/ruby/3.0.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/apple/Desktop/Aasif/Blogger/vendor/bundle/ruby/3.0.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20210316-18597-tz7kod/racc

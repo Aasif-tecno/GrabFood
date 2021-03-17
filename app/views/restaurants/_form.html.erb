@@ -1,0 +1,57 @@
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">Create Restaurant</div>
+    <div class="card-body">
+      <%= form_with(model: restaurant) do |form| %>
+        <% if restaurant.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+
+            <ul>
+              <% restaurant.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="form-group">
+          <%= form.label :title%>
+          <%= form.text_field :title , class: "form-control"%>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :description %>
+          <%= form.text_area :description , class: "form-control"%>
+        </div>
+
+         <div class="form-group">
+          <%= form.label :header_image %>
+          <%= form.file_field :header_image , class: "form-control"%>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :website %>
+          <%= form.text_field :website , class: "form-control"%>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :phone_number %>
+          <%= form.number_field :phone_number, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :address %>
+          <%= form.text_area :address , class: "form-control"%>
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+        <div class="form-group">
+          <%= form.submit "Create Restaurant", class: "btn btn-primary"%>
+        </div>
+        <div>
+          <%= link_to 'Back', restaurants_path, class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>  
+  </div>
+</div>

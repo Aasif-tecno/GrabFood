@@ -1,0 +1,36 @@
+
+<div class="container mt-5">
+ <div class="d-flex justify-content-between m-3">
+      <%= link_to 'Back', @restaurant, class: "btn btn-dark" %> 
+      <%= link_to "Add Menu Item", new_restaurant_product_path(@restaurant), class: "btn btn-primary"%>
+    </div>
+  <%= form_with(model: [@restaurant,@product]) do |item| %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= item.label :title %>
+        <%= item.text_field :title, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= item.label :price %>
+        <%= item.text_field :price , class: "form-control"%>
+      </div>
+    </div>
+    </div>
+      <div class="form-group">
+        <%= item.label :product_image %>
+        <%= item.file_field :product_image , class: "form-control"%>
+      </div>
+
+    <div class="form-group">
+      <%= item.label :description %>
+      <%= item.text_area :description , class: "form-control"%>
+    </div>
+
+    <div class="form-group mt-3 mb-3">
+      <%= item.submit "Add Menu Item", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

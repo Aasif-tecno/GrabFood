@@ -1,0 +1,86 @@
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-between m-3">
+        <h3 class="mb-3">Famouse Restaurants </h3>
+        <div>
+          <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+            <i class="fa fa-arrow-left"></i>
+          </a>
+          <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-12">
+        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <% @restaurant.each do |res| %>
+                  <div class="col-md-4 mb-3">
+                    <%= link_to res, class: "text-decoration-none text-dark" do %>
+                      <div class="card shadow">
+                        <%= image_tag res.header_image ,class: "img-fluid"%>
+                        <div class="card-body">
+                          <h4 class="card-title"><%= res.title%></h4>
+                          <p class="card-text"><%= res.description %>.</p>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            </div>    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ <div class="container"> 
+  <div class="row mt-5">
+    <div class="d-flex justify-content-between mb-3">
+       <h3>Today's Special </h3>
+    </div>
+    <% @item.each do |item|%>
+      <div class="col-md-3">
+        <%= link_to  item.restaurant, class: "text-decoration-none text-dark"  do %>
+        <div class="card mb-3 shadow">
+          <div class="card-body">
+            <% if item.product_image.present? %>
+              <%= image_tag item.product_image ,class: "card-img-top"%>
+            <% end %>
+            <div class="card-title"><h4><%= item.title %></div></h4>
+            <p><%= item.description %><p>
+            <span class="text-strong">Price : <%= item.price %></span>$<br>
+            <a href="#" class="btn btn-success mt-2">Order</a>
+          </div>
+        </div>   
+        <% end %> 
+      </div>
+    <% end  %>
+  </div>
+</div>
+<div class="container mt-5">
+  <% @item.each do |item|%>
+    <div class="card mb-4 shadow">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <% if item.product_image.present? %>
+              <img class="img-fluid" src="<%= url_for(item.product_image)%>" alt="Card image cap">
+            <% end %>
+          </div>
+          <div class="col-md-8">
+            <div class="card-title"><h3><%= item.title %></h3></div>
+            <p><%= item.description %><p>
+            <span class="text-strong">Price : <%= item.price %></span>$<br>
+            <a href="#" class="btn btn-success">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

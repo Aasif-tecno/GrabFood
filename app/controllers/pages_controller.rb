@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @restaurant = Restaurant.all
+    @restaurant = Restaurant.first(3)
     @item = Product.all
   end
 end

@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user! , except: [:show]
-  before_action :provider?
+
 
   # GET /restaurants
   def index
@@ -60,7 +60,4 @@ class RestaurantsController < ApplicationController
       params.require(:restaurant).permit(:title, :description, :website, :phone_number, :address, :header_image)
     end
 
-    def provider?
-      current_user.provider?
-    end
 end
